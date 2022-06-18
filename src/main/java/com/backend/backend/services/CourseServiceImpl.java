@@ -1,15 +1,18 @@
 package com.backend.backend.services;
 
 import com.backend.backend.entities.Courses;
-import com.backend.backend.services.CourseServiceImpls;
+
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseServiceImpls implements CourseServices{
+
+@Service
+public class CourseServiceImpl implements CourseServices{
     List<Courses> list;
 
-    public CourseServiceImpls() {
+    public CourseServiceImpl() {
         list=new ArrayList<>();
 
         list.add(new Courses(1,"Tarun","Description"));
