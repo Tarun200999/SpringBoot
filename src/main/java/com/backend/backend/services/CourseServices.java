@@ -12,4 +12,9 @@ public interface CourseServices {
 
     public Courses addCourse(Courses course);
 
+
+    public Courses updateCourse(Courses course);
+
+
+    public long deleteCourse(long courseId);
 }

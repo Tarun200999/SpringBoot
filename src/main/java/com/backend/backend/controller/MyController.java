@@ -2,7 +2,6 @@ package com.backend.backend.controller;
 import com.backend.backend.services.CourseServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.bind.annotation.PostMapping;
 import com.backend.backend.entities.Courses;
 
 import java.util.ArrayList;
@@ -33,5 +32,16 @@ public class MyController {
     @PostMapping(path = "/courses",consumes = "application/json")
     public Courses addCourse(@RequestBody Courses course){
         return courseServices.addCourse(course);
+    }
+
+    @RequestMapping(path = "/course",method = RequestMethod.PUT)
+    public Courses updateCourse(@RequestBody Courses course){
+        return courseServices.updateCourse(course);
+    }
+
+
+    @DeleteMapping("/course/{courseId}")
+    public long deleteCourse(@PathVariable String courseId){
+        return courseServices.deleteCourse(Long.parseLong(courseId));
     }
 }

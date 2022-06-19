@@ -49,4 +49,27 @@ public class CourseServiceImpl implements CourseServices{
         list.add(course);
         return course;
     }
+
+    @Override
+    public Courses updateCourse(Courses course) {
+
+        Courses c=null;
+
+        for(Courses s:list){
+            if(s.getId()==course.getId()){
+                s.setName(course.getName());
+                s.setDescription((course.getDescription()));
+                break;
+            }
+        }
+
+        return course;
+    }
+
+    @Override
+    public long deleteCourse(long courseId) {
+        return courseId;
+    }
+
+
 }
