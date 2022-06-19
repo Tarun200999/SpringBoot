@@ -7,4 +7,9 @@ import java.util.List;
 public interface CourseServices {
 
     public List<Courses> getCourses();
+
+    public Courses getSingleCourse(long courseId);
+
+    public Courses addCourse(Courses course);
+
 }

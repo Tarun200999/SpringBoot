@@ -30,4 +30,23 @@ public class CourseServiceImpl implements CourseServices{
     public List<Courses> getCourses() {
         return list;
     }
+
+    @Override
+    public Courses getSingleCourse(long courseId){
+        Courses searchedCourse = null;
+
+        for(Courses singleCourse :list){
+            if(singleCourse.getId()==courseId){
+                searchedCourse=singleCourse;
+                break;
+            }
+        }
+        return searchedCourse;
+    }
+
+    @Override
+    public Courses addCourse(Courses course) {
+        list.add(course);
+        return course;
+    }
 }
