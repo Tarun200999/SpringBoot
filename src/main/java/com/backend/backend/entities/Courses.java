@@ -1,19 +1,25 @@
 package com.backend.backend.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+@Document
 public class Courses {
+    @Id
+    private String id;
+    @Field
+    private String name;
+    @Field
+    private String description;
 
-    long id;
-    String name;
-    String description;
-
-
-    public Courses(long id, String name, String description) {
+    public Courses(String id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
@@ -25,7 +31,7 @@ public class Courses {
         return description;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
